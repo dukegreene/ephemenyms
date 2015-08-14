@@ -53,7 +53,7 @@ KEYS_AND: "values0123834xyz"
 ON_EACH: "lineinthefile39425663743abc"  
 BASED_ON: "yourTwitterAPIkeys"  
 
-...and then "cd" (that's a command line temr to look up) into your ephemenyms folder and run the code from the command line with  
+...and then "cd" (that's a command line term to look up) into your ephemenyms folder and run the code from the command line with  
 `ruby ephemenym.rb`  
 
 ...and see what happens next!
