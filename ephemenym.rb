@@ -6,15 +6,6 @@ require 'uri'
 
 API_KEYS = YAML.load(File.read("keys.yml"))
 
-# client = Twitter::REST::Client.new do |config|
-#   config.consumer_key        = API_KEYS['CONSUMER_KEY']
-#   config.consumer_secret     = API_KEYS['CONSUMER_SECRET']
-#   config.access_token        = API_KEYS['ACCESS_TOKEN']
-#   config.access_token_secret = API_KEYS['ACCESS_TOKEN_SECRET']
-# end
-
-# https://api.twitter.com/1.1/account/update_profile.json?name=Duke%20Greene
-
 class EphemenymClient
   attr_reader :credentials
 
@@ -91,7 +82,6 @@ class EphemenymGenerator
 
 end
 
-# For now, Let's cycle between names on a loop. To do: Use the name attribute to send messages.
 
 client = EphemenymClient.new(
   consumer_key: API_KEYS['CONSUMER_KEY'],
@@ -101,6 +91,8 @@ client = EphemenymClient.new(
 )
 
 generator = EphemenymGenerator.new("A few questions: Is 140 too many? Could 20 be enough? Who decides when a missive is obsolete? What if your identity is less about what you said in the past and more about who you are in the present? Are user name histories kept in the data archives of social giants? Could we use our names to say more than our names? And if we could change our names as quickly as we change our minds, could our names change other minds too?")
+
+final_name = "#BumbleGrad #DBC"
 
 puts "*******************"
 puts "Pending ephemenyms:"
@@ -124,5 +116,11 @@ puts "*******************\n"
   end
 end
 
-client.update_name("#BumbleGrad #DBC")
+client.update_name(final_name)
+puts "Twitter name updated to: '#{final_name}'."
+puts "All done! Wasn't that kinda fun, in a plodding, furtive, self-indulgent sort of way?"
+
+puts "*******************"
+puts "Thanks for giving Ephemenyms a whirl! Now would be a great time to go outside for a minute and bask in your curious human existence. The machine will still be here when you get back."
+puts "*******************\n"
 
